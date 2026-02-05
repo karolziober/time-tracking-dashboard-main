@@ -1,0 +1,279 @@
+:root {
+  /* Preset 1 - Rubik Light 56px */
+  --text-preset-1: 300 clamp(2rem, 4vw, 3.5rem)/1.18 "Rubik", sans-serif;
+
+  /* Preset 2 - Rubik Light 40px */
+  --text-preset-2: 300 clamp(2rem, 4vw, 2.5rem)/2.9375rem "Rubik", sans-serif;
+
+  /* Preset 3 - Rubik Light 32px */
+  --text-preset-3: 300 2rem/2.375rem "Rubik", sans-serif;
+
+  /* Preset 4 - Rubik Light 24px */
+  --text-preset-4: 300 1.5rem/1.75rem "Rubik", sans-serif;
+
+  /* Preset 5 Medium - Rubik Medium 18px */
+  --text-preset-5-medium: 500 1.125rem/1.3125rem "Rubik", sans-serif;
+
+  /* Preset 5 Regular - Rubik Regular 18px */
+  --text-preset-5-regular: 400 1.125rem/1.3125rem "Rubik", sans-serif;
+
+  /* Preset 6 - Rubik Regular 15px */
+  --text-preset-6: 400 0.9375rem/1.125rem "Rubik", sans-serif;
+
+  /* Colors */
+
+  /* White & Black */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Navy */
+  --color-navy-950: #0e1323;
+  --color-navy-900: #1c204b;
+  --color-navy-800: #33397a;
+  --color-navy-200: #bbc0ff;
+
+  /* Orange */
+  --color-orange-300: #ff8b64;
+
+  /* Purple */
+  --color-purple-700: #7335d2;
+  --color-purple-600: #5747ea;
+  --color-purple-500: #7078c9;
+
+  /* Blue */
+  --color-blue-300: #55c2e6;
+
+  /* Pink */
+  --color-pink-400: #ff5e7d;
+
+  /* Green */
+  --color-green-400: #4bcf82;
+
+  /* Yellow */
+  --color-yellow-300: #f1c75b;
+
+  /* Grey */
+  --color-grey-200: #d8d8d8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: hsl(226, 43%, 10%);
+  font-family: Rubik, sans-serif;
+}
+
+p {
+  font: var(--text-preset-6);
+  color: var(--color-navy-200);
+}
+
+h2 {
+  font: var(--text-preset-2);
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  color: white;
+  gap: 2rem;
+  max-width: 69.75rem;
+  width: 100%;
+}
+
+.profile-card {
+  display: flex;
+
+  flex-direction: column;
+}
+.profile-name {
+  background-color: hsl(246, 80%, 60%);
+  padding: 2rem 2rem 6.1875rem 2rem;
+  /* padding-bottom: 1.25rem; */
+  border-radius: 0.9375rem;
+  position: relative;
+  z-index: 1; /* appears on top */
+}
+
+.profile-name img {
+  width: 4.875rem;
+  margin-block-end: 2.5rem;
+  border: solid 0.1875rem white;
+  border-radius: 50%;
+  box-shadow: rgb(38, 57, 77) 0 1.25rem 1.875rem -0.625rem;
+}
+.time-frame-nav {
+  margin-top: -2rem;
+  display: flex;
+  flex: 1;
+  padding: 4rem 2rem 2rem 2rem;
+  flex-direction: column;
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 0.9375rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.button {
+  background: none;
+  border: none;
+  color: var(--color-purple-500);
+  cursor: pointer;
+  margin-block-end: 1.3125rem;
+  font: var(--text-preset-5-regular);
+  transition: 0.2s ease-in-out;
+}
+
+.button:hover {
+  color: var(--color-white);
+}
+
+[data-timeframe="monthly"] {
+  margin-block-end: 0;
+}
+.card-banner {
+  display: flex;
+  height: 4.375rem;
+  border-radius: 0.9375rem;
+  align-content: center;
+  justify-content: flex-end;
+  padding-inline-end: 1rem;
+  overflow: hidden;
+}
+
+.card-banner img {
+  width: 4.375rem;
+  height: 100%;
+}
+
+.card-banner[data-category="work"] {
+  background-color: var(--color-orange-300);
+}
+.card-banner[data-category="play"] {
+  background-color: var(--color-blue-300);
+}
+.card-banner[data-category="study"] {
+  background-color: var(--color-pink-400);
+}
+.card-banner[data-category="exercise"] {
+  background-color: var(--color-green-400);
+}
+.card-banner[data-category="social"] {
+  background-color: var(--color-purple-700);
+}
+.card-banner[data-category="self-care"] {
+  background-color: var(--color-yellow-300);
+}
+.card-banner[data-category="xyz"] {
+  background-color: var(--color-yellow-300);
+}
+
+.activities-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr)); */
+  min-width: 0;
+  gap: 2rem;
+  grid-column: span 3;
+}
+.activity-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  background-color: hsl(235, 46%, 20%);
+  padding: 2rem;
+  border-radius: 0.9375rem;
+  margin-top: -1.25rem;
+  flex: 1;
+  transition: 0.2s ease-in-out;
+}
+
+.card-body:hover {
+  background-color: var(--color-navy-800);
+  cursor: pointer;
+}
+
+.card-title {
+  font: var(--text-preset-5-medium);
+  margin-block-end: 1.5rem;
+}
+
+.time {
+  font: var(--text-preset-1);
+  margin-block-end: 0.5rem;
+}
+.time-previous {
+  font: var(--text-preset-6);
+  color: var(--color-navy-200);
+}
+@media (max-width: 764px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .profile-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem; /* Remove the large bottom padding */
+  }
+  .user {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-content: center;
+  }
+  .button {
+    margin: 0;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  .profile-name img {
+    margin-block-end: 0; /* Remove bottom margin on mobile */
+  }
+
+  .time-frame-nav {
+    flex-direction: row;
+    padding: 64px 2rem 2rem 2rem;
+    justify-content: space-between; /* Spread buttons evenly */
+    /* padding: 1.5rem 2rem; */
+  }
+
+  .activities-container {
+    grid-template-columns: 1fr;
+    grid-column: span 1; /* Override the span 3 from desktop */
+  }
+
+  .activity-card,
+  .profile-card {
+    width: 100%;
+  }
+
+  .card-title {
+    margin-block-end: 12px;
+  }
+
+  .time-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .time {
+    margin: 0;
+  }
+}
