@@ -19,12 +19,29 @@ class Dashboard {
   }
 
   async loadData() {
-    const response = await fetch("data.json");
-    this.data = await response.json();
+    try {
+      const response = await fetch("data.json");
+
+      if (!response.ok) {
+        throw new Error("Response not ok");
+      }
+      this.data = await response.json();
+    } catch (error) {
+      console.error("Failed to load data", error);
+      this.data = null;
+    }
   }
 
   renderCards(timeframe) {
     this.activities.innerHTML = "";
+
+    if (!Array.isArray(this.data) || this.data.length === 0) {
+      this.activities.insertAdjacentHTML(
+        "beforeend",
+
+        "<p>No Data Available</p>",
+      );
+    }
     this.data.forEach((item) => {
       this.activities.insertAdjacentHTML(
         "beforeend",
