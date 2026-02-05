@@ -34,9 +34,9 @@ class Dashboard {
           </div>
           <div class="card-body">
             <div class="card-title">${item.title}</div>
-            <div class="time-section">
-            <div class="time">${item.timeframes[timeframe].current}hrs</div>
-            <div class="time-previous">${this.periodLabels[timeframe]} - ${item.timeframes[timeframe].previous}hrs</div>
+            <div class="time-section" aria-label="Current and previous time spent on work">
+            <div class="time" aria-label="Current time spent on work">${item.timeframes[timeframe].current}hrs</div>
+            <div class="time-previous" aria-label="Previous time spent on work">${this.periodLabels[timeframe]} - ${item.timeframes[timeframe].previous}hrs</div>
             </div>
           </div>
         </div>`,
