@@ -29,8 +29,8 @@ class Dashboard {
       this.activities.insertAdjacentHTML(
         "beforeend",
         `<div class="activity-card" >
-          <div class="card-banner" data-category="${item.title.toLowerCase().replace(" ", "-")}">
-          <img src="images/icon-${item.title.toLowerCase().replace(" ", "-")}.svg" alt="icon-${item.title.toLowerCase().replace(" ", "-")}">
+          <div class="card-banner" data-category="${item.title.toLowerCase().replace(/ /g, "-")}">
+          <img src="images/icon-${item.title.toLowerCase().replace(/ /g, "-")}.svg" alt="icon-${item.title.toLowerCase().replace(/ /g, "-")}">
           </div>
           <div class="card-body">
             <div class="card-title">${item.title}</div>
@@ -56,4 +56,8 @@ class Dashboard {
 }
 
 const app = new Dashboard();
-await app.init();
+
+async function startApp() {
+  await app.init();
+}
+startApp();
