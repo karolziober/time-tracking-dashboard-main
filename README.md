@@ -34,27 +34,17 @@ time-tracking-dashboard-main/
 └── data.json            # Activity data
 ```
 
-## Getting Started
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/karolziober/time-tracking-dashboard-main.git
-   ```
-
-2. Open `index.html` in your browser, or use a local server:
-   ```bash
-   npx serve .
-   ```
-
 ## Key Implementation Details
 
 ### CSS Architecture
+
 - CSS custom properties for consistent theming and spacing
 - Mobile-first responsive design with breakpoints at 764px and 1440px
 - CSS Grid for the main dashboard layout
 - Flexbox for component-level layouts
 
 ### JavaScript
+
 - Object-oriented approach using ES6 classes
 - Asynchronous data loading from JSON
 - Event delegation for efficient click handling
