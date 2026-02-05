@@ -41,6 +41,7 @@ class Dashboard {
 
         "<p>No Data Available</p>",
       );
+      return;
     }
     this.data.forEach((item) => {
       this.activities.insertAdjacentHTML(
